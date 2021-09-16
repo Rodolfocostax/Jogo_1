@@ -8,9 +8,9 @@ end
 
 def sorteia_numero_secreto
 	puts "Escolhendo um número secreto entre 0 e 200..."
-	numero_secreto = 175
+	sorteado = 175
 	puts "Escolhido... que tal adivinhar hoje nosso número secreto?"
-	numero_secreto
+	sorteado
 end
 
 def pede_um_numero (tentativa, limite_de_tentativas)
@@ -23,19 +23,20 @@ def pede_um_numero (tentativa, limite_de_tentativas)
 end
 limite_de_tentativas = 5
 da_boas_vindas
-sorteado = sorteia_numero_secreto
+numero_secreto = sorteia_numero_secreto
 
 
 
 
 for tentativa in 1..limite_de_tentativas
 	chute = pede_um_numero(tentativa, limite_de_tentativas)
-	acertou = sorteado == chute
+	acertou = numero_secreto == chute
 
 	if acertou
 		puts "Acertou"
+		break
 	else
-		maior = sorteado > chute
+		maior = numero_secreto > chute
 		if maior 
 			puts "O número secreto é maior!"
 		else
